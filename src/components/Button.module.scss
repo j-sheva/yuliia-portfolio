@@ -1,0 +1,29 @@
+@import "../styles/variables";
+@import "../styles/mixins";
+
+.button {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  padding: 12px 24px;
+  border-radius: 12px;
+  background: #fff;
+  color: #0b0b0b;
+  font-family: "Inter";
+  font-size: 16px;
+  font-weight: 400;
+  overflow: hidden;
+  transition: all 0.3s ease;
+
+  span {
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s ease;
+  }
+
+  &:hover {
+    &::before {
+      transform: translateY(0);
+    }
+  }
+}

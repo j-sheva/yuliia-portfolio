@@ -1,0 +1,263 @@
+@import "../styles/variables";
+@import "../styles/mixins";
+
+h3 {
+  color: #fff;
+  text-align: left;
+  font-family: "Inter";
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px; /* 142.857% */
+  text-transform: uppercase;
+  @include max-width(768px) {
+    font-size: 24px;
+  }
+}
+
+.about {
+  display: flex;
+  padding: 160px 0 80px 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 64px;
+  align-self: stretch;
+  @include max-width(768px) {
+    padding: 100px 0px 40px 0px;
+    gap: 16px;
+  }
+
+  h2 {
+    color: #fff;
+    text-align: center;
+    font-family: "Inter";
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 48px; /* 120% */
+    @include max-width(768px) {
+      font-size: 24px;
+    }
+  }
+
+  &__block {
+    display: flex;
+    padding: 0 200px;
+    align-items: start;
+    gap: 64px;
+    align-self: stretch;
+    @include max-width(1024px) {
+      padding: 0px 64px;
+      gap: 32px;
+    }
+    @include max-width(768px) {
+      padding: 0px 16px;
+      gap: 16px;
+      flex-direction: column;
+    }
+  }
+
+  &__left {
+    max-width: 30%;
+    display: flex;
+
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    @include max-width(768px) {
+      max-width: 100%;
+    }
+  }
+
+  &__right {
+    display: flex;
+    padding: 24px 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 24px;
+    flex: 1 0 0;
+    @include max-width(1024px) {
+      padding: 0px;
+      gap: 16px;
+      flex: auto;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 48px;
+    align-self: stretch;
+  }
+  &__copy_item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    align-self: stretch;
+  }
+
+  &__subtitle {
+    color: #a0c1fe;
+    font-family: "Inter";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    text-transform: uppercase;
+    align-self: stretch;
+  }
+  &__copy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    align-self: stretch;
+  }
+
+  &__text {
+    color: rgba(255, 255, 255, 0.6);
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 24px; /* 150% */
+    align-self: stretch;
+  }
+}
+
+.path {
+  display: flex;
+  padding: 80px 200px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 64px;
+  align-self: stretch;
+  @include max-width(1024px) {
+    padding: 40px 64px;
+    gap: 32px;
+  }
+  @include max-width(768px) {
+    padding: 40px 16px;
+    gap: 16px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+  }
+
+  &__item {
+    display: flex;
+    padding: 40px 8px;
+    align-items: flex-start;
+    gap: 48px;
+    align-self: stretch;
+    border-top: 0.5px solid rgba(255, 255, 255, 0.41);
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.41);
+    @include max-width(1024px) {
+      gap: 8px;
+    }
+    @include max-width(768px) {
+      padding: 16px 8px;
+      gap: 12px;
+      flex-direction: column;
+    }
+  }
+
+  &__year {
+    width: 166px;
+    color: #fff;
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 20px; /* 125% */
+    @include max-width(768px) {
+      line-height: 18px; /* 127.273% */
+      font-size: 14px;
+    }
+  }
+
+  &__copy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    flex: 1 0 0;
+  }
+
+  &__title {
+    color: #fff;
+    font-family: "Inter";
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px; /* 127.273% */
+    @include max-width(768px) {
+      line-height: 24px; /* 127.273% */
+      font-size: 18px;
+    }
+  }
+}
+
+.toolkit {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  width: 100%;
+  @include max-width(768px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    gap: 12px;
+    border-radius: 16px;
+    border: 0.5px solid rgba(255, 255, 255, 0.2);
+    background: #121111;
+    transition:
+      transform 0.2s ease,
+      border 0.2s ease;
+
+    img {
+      width: 54px;
+      height: 54px;
+      object-fit: contain;
+      @include max-width(768px) {
+        width: 32px;
+        height: 32px;
+      }
+    }
+
+    @include max-width(768px) {
+      padding: 16px;
+    }
+  }
+
+  &__copy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    width: 100%;
+    p {
+      width: 100%;
+      text-align: center;
+      @include max-width(768px) {
+        line-height: 18px; /* 127.273% */
+        font-size: 14px;
+      }
+    }
+  }
+}

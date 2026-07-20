@@ -1,0 +1,256 @@
+@import "../styles/variables";
+@import "../styles/mixins";
+
+.project {
+  display: flex;
+  padding: 120px;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 64px;
+  align-self: stretch;
+  @include max-width(1024px) {
+    padding: 80px;
+    gap: 16px;
+  }
+  @include max-width(768px) {
+    flex-direction: column-reverse;
+    padding: 100px 16px 40px 16px;
+    gap: 40px;
+  }
+  &__img {
+    width: 100%;
+    height: auto;
+  }
+
+  &__left {
+    max-width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    @include max-width(768px) {
+      max-width: 100%;
+    }
+  }
+
+  &__right {
+    display: flex;
+    padding-top: 19px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 48px;
+    flex: 1 0 0;
+    @include max-width(768px) {
+      gap: 24px;
+    }
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    align-self: stretch;
+    @include max-width(768px) {
+      gap: 8px;
+    }
+  }
+  &__items {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    align-self: stretch;
+    @include max-width(768px) {
+      gap: 12px;
+    }
+  }
+
+  &__type {
+    color: #a0c1fe;
+    font-family: "Inter";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    text-transform: uppercase;
+    @include max-width(768px) {
+      font-size: 12px;
+    }
+  }
+
+  &__description {
+    color: rgba(255, 255, 255, 0.6);
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    align-self: stretch;
+    @include max-width(768px) {
+      font-size: 14px;
+    }
+  }
+
+  &__arrows {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    align-self: stretch;
+    &_img {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  &__up,
+  &__down {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    align-self: stretch;
+
+    &_copy {
+      color: rgba(255, 255, 255, 0.6);
+      font-family: "Inter";
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: normal;
+      align-self: stretch;
+    }
+  }
+
+  &__heading {
+    padding: 0 120px;
+    display: flex;
+    gap: 40px;
+    @include max-width(768px) {
+      flex-direction: column;
+      padding: 0 32px;
+    }
+  }
+
+  &__title {
+    display: block;
+    width: 100%;
+    color: $white-color;
+    font-family: $inria-serif;
+    font-size: 56px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    @include max-width(768px) {
+      font-size: 24px;
+    }
+  }
+
+  &__bottom_item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    align-self: stretch;
+  }
+  &__subtitle {
+    color: #fff;
+    font-family: "Inter";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px; /* 133.333% */
+    align-self: stretch;
+    @include max-width(768px) {
+      font-size: 16px;
+    }
+  }
+
+  &__problem {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  &__button {
+    display: flex;
+    padding: 8px 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    border-radius: 12px;
+    background: #fff;
+    color: #0b0b0b;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-left: 0;
+    margin: 0;
+    list-style: none;
+
+    li {
+      position: relative;
+      padding-left: 16px;
+
+      line-height: 1.5;
+
+      color: rgba(255, 255, 255, 0.6);
+      font-family: "Inter";
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: normal;
+      align-self: stretch;
+      @include max-width(768px) {
+        font-size: 14px;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 8px;
+        width: 4px;
+        height: 4px;
+        background: rgba(255, 255, 255, 0.6);
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+.button {
+  margin-top: 40px;
+  position: relative;
+  cursor: pointer;
+  background-color: $bg-button-color;
+  width: 240px;
+  height: 60px;
+  border-radius: 100px;
+  border: 0.5px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+  color: $white-color;
+  font-family: $inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border 0.3s ease; // Transition for border color
+  clip-path: stroke-box;
+
+  @media (max-width: 48rem) {
+    width: 9.47475rem;
+    height: 2.8rem;
+    font-size: 14px;
+  }
+}

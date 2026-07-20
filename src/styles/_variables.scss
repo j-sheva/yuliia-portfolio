@@ -1,0 +1,42 @@
+:root {
+  --gradient:  linear-gradient(97deg, #8C80FB 12.6%, #9ABDFF 25.8%, #FFF 71.02%);
+
+  --black-color: rgb(11, 11, 11);
+  --white-color: rgb(255, 255, 255);
+  --bg-main: rgb(11, 11, 11);
+  --bg-sec: #121111
+  --border: rgba(255, 255, 255, 0.18);
+  --bg-button-color: rgba(255, 255, 255);
+  --main-text-color: rgba(255, 255, 255);
+  --secondary-text-color:  rgba(255, 255, 255, 0.8);
+  --tertiary-text-color:  rgba(255, 255, 255, 0.6);
+  --purple: #929CFD;
+  --blue: rgba(160, 193, 254, 1);
+  --inria-serif: 'Inria Serif', sans-serif;
+  --inter: 'Inter', sans-serif;
+}
+
+
+$gradient: var(--gradient);
+
+$black-color: var(--black-color);
+$white-color: var(--white-color);
+$bg-main: var( --bg-main);
+$bg-sec: var( --bg-sec);
+$border: var( --border);
+$purple: var( --purple);
+$blue: var( --blue);
+$bg-button-color: var(--bg-button-color);
+$main-text-color: var(--main-text-color);
+$secondary-text-color: var(--secondary-text-color);
+$tertiary-text-color: var(--tertiary-text-color);
+
+$inria-serif: var(--inter);
+$inter: var(--inter);
+
+$h1-size: var(--h1-size);
+$h2-size: var(--h2-size);
+$h3-size: var(--h3-size);
+$normal-size: var(--normal-size);
+$ex-small-size: var(--ex-small-size);
+$link-size: 300;
