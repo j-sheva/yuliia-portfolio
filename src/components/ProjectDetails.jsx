@@ -2,193 +2,319 @@ import PropTypes from "prop-types";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import styles from "./ProjectDetails.module.scss";
-import up from "../assets/svg/up.svg";
-import down from "../assets/svg/down.svg";
+
+const Section = ({ label, children }) => (
+  <section className={styles.section}>
+    <div className={styles.sectionGrid}>
+      <div className={styles.sectionLabel}>{label}</div>
+      <div className={styles.sectionBody}>{children}</div>
+    </div>
+  </section>
+);
 
 const ProjectDetails = ({
-  type,
+  accentColor,
+  eyebrow,
   title,
-  description,
+  lede,
   link,
   role,
   platform,
+  team,
   scope,
-  problemText,
-  problemList,
-  goal,
-  what,
-  solution,
-  up_copy,
-  down_copy,
-  learnings,
-  image1,
-  image2,
-  image3,
-  image4,
+  stats,
+  context,
+  problem,
+  discovery,
+  decisionsIntro,
+  decisionImageLayout,
+  decisions,
+  process,
+  validation,
+  finalDesign,
+  impact,
+  reflection,
 }) => {
   return (
-    <div>
+    <div className={styles.project} style={{ "--accent": accentColor }}>
       <Header />
-      <main className={styles.project}>
-        <div className={styles.project__left}>
-          {image1 && (
-            <img
-              className={styles.project__img}
-              src={image1}
-              alt={`${title} screenshot`}
-            />
-          )}
-          {image2 && (
-            <img
-              className={styles.project__img}
-              src={image2}
-              alt={`${title} screenshot`}
-            />
-          )}
-          {image3 && (
-            <img
-              className={styles.project__img}
-              src={image3}
-              alt={`${title} screenshot`}
-            />
-          )}
-          {image4 && (
-            <img
-              className={styles.project__img}
-              src={image4}
-              alt={`${title} screenshot`}
-            />
-          )}
-        </div>
-        <div className={styles.project__right}>
-          <div className={styles.project__top}>
-            <p className={styles.project__type}>{type}</p>
-            <h2 className={styles.project__title}>{title}</h2>
-            <p className={styles.project__description}>{description}</p>
-          </div>
-          {link && (
-            <a target="_blank" rel="noopener noreferrer" href={link}>
-              <div className={styles.project__button}>
-                <p>Open in App Store</p>{" "}
-              </div>
-            </a>
-          )}
-          <div className={styles.project__items}>
-            <div className={styles.project__item}>
-              <p className={styles.project__type}>ROLE</p>
-              <p className={styles.project__description}>{role}</p>
-            </div>
-            <div className={styles.project__item}>
-              <p className={styles.project__type}>Platform</p>
-              <p className={styles.project__description}>{platform}</p>
-            </div>
-            <div className={styles.project__item}>
-              <p className={styles.project__type}>Scope</p>
-              <p className={styles.project__description}>{scope}</p>
-            </div>
-          </div>
+      <main className={styles.hero}>
+        <p className={styles.eyebrow}>{eyebrow}</p>
+        <h1 className={styles.title}>{title}</h1>
+        <p className={styles.lede}>{lede}</p>
 
-          <div className={styles.project__bottom_item}>
-            <h3 className={styles.project__subtitle}>Problem</h3>
+        {link && (
+          <a
+            className={styles.button}
+            target="_blank"
+            rel="noopener noreferrer"
+            href={link}
+          >
+            Open in App Store
+          </a>
+        )}
 
-            <div className={styles.project__problem}>
-              {problemText.map((text, index) => (
-                <p key={index} className={styles.project__description}>
-                  {text}
-                </p>
-              ))}
-
-              <ul className={styles.project__list}>
-                {problemList.map((item, index) => (
-                  <li key={index}>{item}</li>
-                ))}
-              </ul>
-            </div>
+        <div className={styles.metaRow}>
+          <div>
+            <span>Role</span>
+            <p>{role}</p>
           </div>
-          <div className={styles.project__bottom_item}>
-            <h3 className={styles.project__subtitle}>Goal</h3>
-            <p className={styles.project__description}>{goal}</p>
+          <div>
+            <span>Platform</span>
+            <p>{platform}</p>
           </div>
-          <div className={styles.project__bottom_item}>
-            <h3 className={styles.project__subtitle}>What I Did</h3>
-            <ul className={styles.project__list}>
-              {what.map((item, index) => (
-                <li key={index}>{item}</li>
-              ))}
-            </ul>
+          <div>
+            <span>Team</span>
+            <p>{team}</p>
           </div>
-          <div className={styles.project__bottom_item}>
-            <h3 className={styles.project__subtitle}>Solution</h3>
-
-            <div className={styles.project__problem}>
-              {solution.map((text, index) => (
-                <p key={index} className={styles.project__description}>
-                  {text}
-                </p>
-              ))}
-            </div>
-          </div>
-          <div className={styles.project__bottom_item}>
-            <h3 className={styles.project__subtitle}>Impact</h3>
-            <div className={styles.project__arrows}>
-              <div className={styles.project__up}>
-                <img
-                  className={styles.project__arrows_img}
-                  src={up}
-                  alt="arrow up"
-                />
-
-                <p className={styles.project__up_copy}>{up_copy}</p>
-              </div>
-              <div className={styles.project__down}>
-                <img
-                  className={styles.project__arrows_img}
-                  src={down}
-                  alt="arrow down"
-                />
-
-                <p className={styles.project__down_copy}>{down_copy}</p>
-              </div>
-            </div>
-          </div>
-          <div className={styles.project__bottom_item}>
-            <h3 className={styles.project__subtitle}>Learnings</h3>
-
-            <div className={styles.project__problem}>
-              {learnings.map((text, index) => (
-                <p key={index} className={styles.project__description}>
-                  {text}
-                </p>
-              ))}
-            </div>
+          <div>
+            <span>Scope</span>
+            <p>{scope}</p>
           </div>
         </div>
+
+        {stats?.length > 0 && (
+          <div className={styles.statStrip}>
+            {stats.map((stat, index) => (
+              <div key={index}>
+                <span className={styles.statNum}>{stat.num}</span>
+                <span className={styles.statLabel}>{stat.label}</span>
+              </div>
+            ))}
+          </div>
+        )}
       </main>
+
+      {context?.length > 0 && (
+        <Section label="Context">
+          {context.map((text, index) => (
+            <p key={index}>{text}</p>
+          ))}
+        </Section>
+      )}
+
+      {problem && (
+        <Section label="The Problem">
+          {problem.heading && <h2>{problem.heading}</h2>}
+          {problem.paragraphs.map((text, index) => (
+            <p key={index}>{text}</p>
+          ))}
+        </Section>
+      )}
+
+      {discovery && (
+        <Section label="Discovery">
+          {discovery.heading && <h2>{discovery.heading}</h2>}
+          {discovery.paragraphs.map((text, index) => (
+            <p key={index}>{text}</p>
+          ))}
+        </Section>
+      )}
+
+      {decisions?.length > 0 && (
+        <Section label="Key Decisions">
+          <h2>Four decisions that shaped the product, and what each one cost.</h2>
+          {decisionsIntro && <p>{decisionsIntro}</p>}
+          {decisions.map((decision, index) => (
+            <div key={index} className={styles.decision}>
+              <div className={styles.decisionContent}>
+                <span className={styles.decisionNum}>{decision.number}</span>
+                <h3>{decision.title}</h3>
+                <p>{decision.description}</p>
+                {decision.tradeoff && (
+                  <p className={styles.tradeoff}>Trade-off: {decision.tradeoff}</p>
+                )}
+              </div>
+              {decision.images?.length > 0 && (
+                decisionImageLayout === "mobile" ? (
+                  <div className={styles.decisionImagesMobile}>
+                    {decision.images.map((img, i) => (
+                      <div key={i} className={styles.decisionImageMobile}>
+                        {img.src ? <img src={img.src} alt="" /> : <div className={styles.finalImagePlaceholder} />}
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <div className={styles.decisionImages}>
+                    {decision.images.map((img, i) => (
+                      <div key={i} className={styles.decisionImageWeb}>
+                        {img.src ? <img src={img.src} alt="" /> : <div className={styles.finalImagePlaceholder} />}
+                      </div>
+                    ))}
+                  </div>
+                )
+              )}
+            </div>
+          ))}
+        </Section>
+      )}
+
+      {process && (
+        <Section label={process.label || "User Flow"}>
+          {process.heading && <h2>{process.heading}</h2>}
+          {process.paragraphs?.map((text, index) => (
+            <p key={index}>{text}</p>
+          ))}
+          <div className={styles.flow}>
+            {process.groups.map((group, index) => (
+              <div key={index} className={styles.flowGroup}>
+                {group.label && <span className={styles.flowGroupLabel}>{group.label}</span>}
+                <div className={styles.flowSteps}>
+                  {group.steps.map((step, stepIndex) => (
+                    <div key={stepIndex} className={styles.flowStepWrap}>
+                      <span className={styles.flowStep}>{step}</span>
+                      {stepIndex < group.steps.length - 1 && (
+                        <span className={styles.flowArrow}>→</span>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </Section>
+      )}
+
+      {validation?.length > 0 && (
+        <Section label="Validation">
+          {validation.map((text, index) => (
+            <p key={index}>{text}</p>
+          ))}
+        </Section>
+      )}
+
+      {finalDesign && (
+        <Section label="Final Design">
+          {finalDesign.paragraphs.map((text, index) => (
+            <p key={index}>{text}</p>
+          ))}
+          {finalDesign.images?.length > 0 && (() => {
+            const grid = finalDesign.imageGrid;
+            const containerClass =
+              grid === "mobile"
+                ? styles.finalImagesMobile
+                : grid === "web"
+                ? styles.finalImagesWeb
+                : styles.finalImages;
+            const itemClass =
+              grid === "mobile"
+                ? styles.finalImageMobile
+                : grid === "web"
+                ? styles.finalImageWeb
+                : styles.finalImage;
+
+            return (
+              <div className={containerClass}>
+                {finalDesign.images.map((image, index) => (
+                  <div key={index} className={itemClass}>
+                    {image.layers ? (
+                      image.layers.map((layer, layerIndex) => (
+                        <img key={layerIndex} src={layer.src} alt="" style={layer.style} />
+                      ))
+                    ) : image.src ? (
+                      <img src={image.src} alt="" />
+                    ) : (
+                      <div className={styles.finalImagePlaceholder} />
+                    )}
+                  </div>
+                ))}
+              </div>
+            );
+          })()}
+        </Section>
+      )}
+
+      {impact?.length > 0 && (
+        <Section label="Impact">
+          {impact.map((text, index) => (
+            <p key={index}>{text}</p>
+          ))}
+        </Section>
+      )}
+
+      {reflection && (
+        <Section label="Reflection">
+          {reflection.heading && <h2>{reflection.heading}</h2>}
+          {reflection.paragraphs.map((text, index) => (
+            <p key={index}>{text}</p>
+          ))}
+        </Section>
+      )}
+
       <Footer />
     </div>
   );
 };
 
+const paragraphsShape = PropTypes.arrayOf(PropTypes.string);
+
 ProjectDetails.propTypes = {
-  type: PropTypes.string.isRequired,
+  accentColor: PropTypes.string.isRequired,
+  eyebrow: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
+  lede: PropTypes.string.isRequired,
+  link: PropTypes.string,
   role: PropTypes.string.isRequired,
   platform: PropTypes.string.isRequired,
+  team: PropTypes.string.isRequired,
   scope: PropTypes.string.isRequired,
-  problemText: PropTypes.string.isRequired,
-  problemList: PropTypes.string.isRequired,
-  goal: PropTypes.string.isRequired,
-  what: PropTypes.string.isRequired,
-  solution: PropTypes.string.isRequired,
-  up_copy: PropTypes.string.isRequired,
-  down_copy: PropTypes.string.isRequired,
-  learnings: PropTypes.string.isRequired,
-  link: PropTypes.string,
-  image1: PropTypes.string,
-  image2: PropTypes.string,
-  image3: PropTypes.string,
-  image4: PropTypes.string,
+  stats: PropTypes.arrayOf(
+    PropTypes.shape({
+      num: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+    })
+  ),
+  context: paragraphsShape,
+  problem: PropTypes.shape({
+    heading: PropTypes.string,
+    paragraphs: paragraphsShape.isRequired,
+  }),
+  discovery: PropTypes.shape({
+    heading: PropTypes.string,
+    paragraphs: paragraphsShape.isRequired,
+  }),
+  decisionsIntro: PropTypes.string,
+  decisionImageLayout: PropTypes.oneOf(["mobile", "web"]),
+  decisions: PropTypes.arrayOf(
+    PropTypes.shape({
+      number: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+      tradeoff: PropTypes.string,
+      images: PropTypes.arrayOf(PropTypes.shape({ src: PropTypes.string })),
+    })
+  ),
+  process: PropTypes.shape({
+    label: PropTypes.string,
+    heading: PropTypes.string,
+    paragraphs: paragraphsShape,
+    groups: PropTypes.arrayOf(
+      PropTypes.shape({
+        label: PropTypes.string,
+        steps: PropTypes.arrayOf(PropTypes.string).isRequired,
+      })
+    ).isRequired,
+  }),
+  validation: paragraphsShape,
+  finalDesign: PropTypes.shape({
+    paragraphs: paragraphsShape.isRequired,
+    images: PropTypes.arrayOf(
+      PropTypes.shape({
+        src: PropTypes.string,
+        layers: PropTypes.arrayOf(
+          PropTypes.shape({
+            src: PropTypes.string.isRequired,
+            style: PropTypes.object,
+          })
+        ),
+      })
+    ),
+  }),
+  impact: paragraphsShape,
+  reflection: PropTypes.shape({
+    heading: PropTypes.string,
+    paragraphs: paragraphsShape.isRequired,
+  }),
 };
 
 export default ProjectDetails;
