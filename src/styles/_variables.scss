@@ -1,42 +1,49 @@
-:root {
-  --gradient:  linear-gradient(97deg, #8C80FB 12.6%, #9ABDFF 25.8%, #FFF 71.02%);
+// ─── Colors ──────────────────────────────────────────────────────────────────
 
-  --black-color: rgb(11, 11, 11);
-  --white-color: rgb(255, 255, 255);
-  --bg-main: rgb(11, 11, 11);
-  --bg-sec: #121111
-  --border: rgba(255, 255, 255, 0.18);
-  --bg-button-color: rgba(255, 255, 255);
-  --main-text-color: rgba(255, 255, 255);
-  --secondary-text-color:  rgba(255, 255, 255, 0.8);
-  --tertiary-text-color:  rgba(255, 255, 255, 0.6);
-  --purple: #929CFD;
-  --blue: rgba(160, 193, 254, 1);
-  --inria-serif: 'Inria Serif', sans-serif;
-  --inter: 'Inter', sans-serif;
-}
+$black-color: #0b0b0b;
+$white-color: #ffffff;
+$bg-main: #0b0b0b;
+$bg-sec: #121111;
+$border: rgba(255, 255, 255, 0.18);
+$gradient: linear-gradient(97deg, #8c80fb 12.6%, #9abdff 25.8%, #fff 71.02%);
 
+$purple: #929cfd;
+$blue: rgba(160, 193, 254, 1);
 
-$gradient: var(--gradient);
+$main-text-color: #ffffff;
+$secondary-text-color: rgba(255, 255, 255, 0.8);
+$tertiary-text-color: rgba(255, 255, 255, 0.6);
 
-$black-color: var(--black-color);
-$white-color: var(--white-color);
-$bg-main: var( --bg-main);
-$bg-sec: var( --bg-sec);
-$border: var( --border);
-$purple: var( --purple);
-$blue: var( --blue);
-$bg-button-color: var(--bg-button-color);
-$main-text-color: var(--main-text-color);
-$secondary-text-color: var(--secondary-text-color);
-$tertiary-text-color: var(--tertiary-text-color);
+$bg-button-color: #ffffff;
 
-$inria-serif: var(--inter);
-$inter: var(--inter);
+// ─── Font families ───────────────────────────────────────────────────────────
 
-$h1-size: var(--h1-size);
-$h2-size: var(--h2-size);
-$h3-size: var(--h3-size);
-$normal-size: var(--normal-size);
-$ex-small-size: var(--ex-small-size);
-$link-size: 300;
+$inter: "Inter", sans-serif;
+$inria-serif: "Inria Serif", serif;
+
+// ─── Type scale ──────────────────────────────────────────────────────────────
+
+$fs-2xs: 12px; // tiny labels, flow steps
+$fs-xs: 13px; // eyebrows, section labels
+$fs-sm: 14px; // footer, button text, small body
+$fs-base: 16px; // body text
+$fs-md: 19px; // lead text, decision titles
+$fs-lg: 22px; // subheadings, path titles
+$fs-xl: 27px; // section h2
+$fs-2xl: 32px; // card titles
+$fs-3xl: 40px; // page-level h2 (About, Portfolio)
+$fs-4xl: 42px; // case study page title
+$fs-5xl: 56px; // contact hero heading
+$fs-6xl: 80px; // home hero heading
+
+// ─── Font weights ────────────────────────────────────────────────────────────
+
+$fw-light: 300;
+$fw-regular: 400;
+$fw-semibold: 600;
+
+// ─── Line heights ────────────────────────────────────────────────────────────
+
+$lh-tight: 1.18;
+$lh-snug: 1.32;
+$lh-normal: 1.5;

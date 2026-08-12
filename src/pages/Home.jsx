@@ -3,9 +3,9 @@ import styles from "./Home.module.scss";
 import Footer from "../components/Footer";
 import Button from "../components/Button";
 import WorkItem from "../components/WorkItem";
-import quImage from "../assets/images/qu.png";
-import aeImage from "../assets/images/ae.png";
-import czImage from "../assets/images/cz.png";
+import quImage from "../assets/images/qu/qu.png";
+import aeImage from "../assets/images/ae/ae.png";
+
 import { useEffect, useRef, useState } from "react";
 
 const Home = () => {
@@ -85,15 +85,6 @@ const Home = () => {
               up_copy="Confidence in B2B transactions"
               down_copy="Complexity of evaluating carbon credits   "
               slug="aetlas"
-            />
-            <WorkItem
-              image={czImage}
-              type="WEB PLATFORM / WEB3"
-              title="Designing a Self-Sustaining Auction Platform"
-              description="Built a secure and intuitive platform for high-value auctions and digital ownership, enabling seamless transactions and long-term autonomous operation."
-              up_copy="Autonomous platform performance (2+ years)"
-              down_copy="Friction in auction participation "
-              slug="cz"
             />
           </div>
           <Button text="All works" to="/portfolio" />

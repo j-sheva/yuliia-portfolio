@@ -155,23 +155,27 @@ const ProjectDetails = ({
           {process.paragraphs?.map((text, index) => (
             <p key={index}>{text}</p>
           ))}
-          <div className={styles.flow}>
-            {process.groups.map((group, index) => (
-              <div key={index} className={styles.flowGroup}>
-                {group.label && <span className={styles.flowGroupLabel}>{group.label}</span>}
-                <div className={styles.flowSteps}>
-                  {group.steps.map((step, stepIndex) => (
-                    <div key={stepIndex} className={styles.flowStepWrap}>
-                      <span className={styles.flowStep}>{step}</span>
-                      {stepIndex < group.steps.length - 1 && (
-                        <span className={styles.flowArrow}>→</span>
-                      )}
-                    </div>
-                  ))}
+          {process.image ? (
+            <img className={styles.processImage} src={process.image} alt="" />
+          ) : process.groups?.length > 0 && (
+            <div className={styles.flow}>
+              {process.groups.map((group, index) => (
+                <div key={index} className={styles.flowGroup}>
+                  {group.label && <span className={styles.flowGroupLabel}>{group.label}</span>}
+                  <div className={styles.flowSteps}>
+                    {group.steps.map((step, stepIndex) => (
+                      <div key={stepIndex} className={styles.flowStepWrap}>
+                        <span className={styles.flowStep}>{step}</span>
+                        {stepIndex < group.steps.length - 1 && (
+                          <span className={styles.flowArrow}>→</span>
+                        )}
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
         </Section>
       )}
 
@@ -193,12 +197,16 @@ const ProjectDetails = ({
             const containerClass =
               grid === "mobile"
                 ? styles.finalImagesMobile
+                : grid === "mobile-3"
+                ? styles.finalImagesMobile3
                 : grid === "web"
                 ? styles.finalImagesWeb
                 : styles.finalImages;
             const itemClass =
               grid === "mobile"
                 ? styles.finalImageMobile
+                : grid === "mobile-3"
+                ? styles.finalImageMobile3
                 : grid === "web"
                 ? styles.finalImageWeb
                 : styles.finalImage;
@@ -288,12 +296,13 @@ ProjectDetails.propTypes = {
     label: PropTypes.string,
     heading: PropTypes.string,
     paragraphs: paragraphsShape,
+    image: PropTypes.string,
     groups: PropTypes.arrayOf(
       PropTypes.shape({
         label: PropTypes.string,
         steps: PropTypes.arrayOf(PropTypes.string).isRequired,
       })
-    ).isRequired,
+    ),
   }),
   validation: paragraphsShape,
   finalDesign: PropTypes.shape({

@@ -1,13 +1,13 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import collage from "../assets/images/yuliia.png";
+import collage from "../assets/images/yuliia.webp";
 import fig from "../assets/svg/fig.svg";
 import vs from "../assets/svg/vs.svg";
 import pho from "../assets/svg/pho.svg";
 import lot from "../assets/svg/lot.svg";
 import ill from "../assets/svg/ill.svg";
 import gpt from "../assets/svg/gpt.svg";
-import gem from "../assets/svg/gem.svg";
+import claude from "../assets/svg/claude.svg";
 import free from "../assets/svg/free.svg";
 import styles from "./About.module.scss";
 
@@ -58,66 +58,126 @@ const About = () => {
           <h3>PATH</h3>
           <div className={styles.path__list}>
             <div className={styles.path__item}>
-              <p className={styles.path__year}>2025 – 2026 </p>
+              <p className={styles.path__year}>2025 – 2026</p>
               <div className={styles.path__copy}>
                 <p className={styles.path__title}>
                   UX/UI Designer — Cobalt Creative Agency
                 </p>
-                <p className={styles.about__text}>
-                  Designing e-commerce websites for consumer brands — food,
-                  fashion, pharma. Focus on distinctive UI, motion design, and
-                  brand identity that converts.
-                </p>
+                <ul className={styles.path__bullets}>
+                  <li>
+                    Redesigned product page structure for e-commerce brand
+                    projects, reducing drop-off by 15% for one of the agency's
+                    largest clients
+                  </li>
+                  <li>
+                    Delivered Shopify-based designs and CRO audits, translating
+                    business requirements into optimized, conversion-focused
+                    user flows
+                  </li>
+                </ul>
               </div>
             </div>
             <div className={styles.path__item}>
-              <p className={styles.path__year}>2024 – 2025 </p>
+              <p className={styles.path__year}>2024 – 2025</p>
               <div className={styles.path__copy}>
                 <p className={styles.path__title}>
-                  UX/UI Designer — Evadav Traffic Group
+                  Product Designer, UX/UI — Evadav Traffic Group
                 </p>
-                <p className={styles.about__text}>
-                  Redesigned mobile app interfaces (iOS & Android) to improve
-                  conversion across onboarding flows and paywalls. Built
-                  scalable design systems across multiple products.
-                </p>
+                <ul className={styles.path__bullets}>
+                  <li>
+                    Designed and launched a tournament/leaderboard feature for a
+                    crypto-trading education app, increasing engagement by 25%
+                  </li>
+                  <li>
+                    Redesigned and personalized onboarding for an AI-powered
+                    plant-care app, reducing drop-off by 20%
+                  </li>
+                  <li>
+                    Redesigned the paywall for a VPN app, increasing purchase
+                    conversion by 18% based on A/B test results
+                  </li>
+                  <li>
+                    Built a scalable design system adopted across multiple
+                    mobile apps, reducing duplicated UI work and improving
+                    design consistency
+                  </li>
+                </ul>
               </div>
             </div>
             <div className={styles.path__item}>
-              <p className={styles.path__year}>2024 </p>
+              <p className={styles.path__year}>2024</p>
               <div className={styles.path__copy}>
                 <p className={styles.path__title}>
-                  UX designer / Front-End — Startups
+                  Product Designer (Contract)
                 </p>
-                <p className={styles.about__text}>
-                  Designed and built interfaces for three early-stage products:
-                  a carbon credit B2B marketplace, a network diagnostics app
-                  redesign, and a health company website (React + Strapi).
-                </p>
+                <ul className={styles.path__bullets}>
+                  <li>
+                    Delivered design work across multiple concurrent client
+                    engagements: EcoEquity (B2B carbon credit marketplace,
+                    Web3), Vitura Health (website rebuild with React & Strapi
+                    CMS), WinSoft (UX research and delivery), and Qualoo (mobile
+                    network-diagnostics app)
+                  </li>
+                  <li>
+                    Redesigned Qualoo's core flows, simplifying confusing
+                    multi-step processes and introducing gamified elements,
+                    increasing flow completion by 30%
+                  </li>
+                  <li>
+                    Simplified complex transactional flows and data
+                    visualizations (EcoEquity) into clear, accessible
+                    experiences for technical and non-technical users
+                  </li>
+                  <li>
+                    Built reusable design systems supporting multiple concurrent
+                    client projects
+                  </li>
+                </ul>
               </div>
             </div>
             <div className={styles.path__item}>
-              <p className={styles.path__year}>2022 – 2024 </p>
+              <p className={styles.path__year}>2022 – 2024</p>
               <div className={styles.path__copy}>
                 <p className={styles.path__title}>UX Designer — BlockTrust</p>
-                <p className={styles.about__text}>
-                  Designed Web3 platforms for global brands — auction
-                  marketplace, amusement park gamification, blockchain
-                  dashboards. Built design systems and shipped products used
-                  across US and European markets.
-                </p>
+                <ul className={styles.path__bullets}>
+                  <li>
+                    Designed Collector's Hub, an NFT auction platform that
+                    continues to operate without major redesigns more than two
+                    years after launch
+                  </li>
+                  <li>
+                    Led end-to-end product design for Web3/blockchain products,
+                    turning complex technical logic into accessible dashboards
+                    and user flows
+                  </li>
+                  <li>
+                    Built a design system with reusable components and
+                    documented tokens, adopted across multiple Web3 products to
+                    speed up delivery
+                  </li>
+                </ul>
               </div>
             </div>
             <div className={styles.path__item}>
-              <p className={styles.path__year}>2021 – 2022 </p>
+              <p className={styles.path__year}>2021 – 2022</p>
               <div className={styles.path__copy}>
                 <p className={styles.path__title}>
                   UX/UI Designer — SupportYourApp
                 </p>
-                <p className={styles.about__text}>
-                  Designed internal web tools and brand identity materials for a
-                  large customer support company.
-                </p>
+                <ul className={styles.path__bullets}>
+                  <li>
+                    Produced brand books and design guidelines, establishing
+                    consistent visual standards used across internal teams
+                  </li>
+                  <li>
+                    Designed email templates and internal communication assets
+                    for company-wide use
+                  </li>
+                  <li>
+                    Redesigned internal company websites, improving usability
+                    and navigation consistency
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
@@ -126,56 +186,56 @@ const About = () => {
           <h3>Toolkit</h3>
           <div className={styles.toolkit}>
             <div className={styles.toolkit__item}>
-              <img src={fig} alt="Figma icon" />
+              <img src={fig} alt="Figma" />
               <div className={styles.toolkit__copy}>
                 <p className={styles.path__year}>Figma</p>
                 <p className={styles.about__text}>Design</p>
               </div>
             </div>
             <div className={styles.toolkit__item}>
-              <img src={free} alt="Freepik icon" />
+              <img src={free} alt="Freepik AI" />
               <div className={styles.toolkit__copy}>
                 <p className={styles.path__year}>Freepik AI</p>
-                <p className={styles.about__text}>Images</p>
+                <p className={styles.about__text}>Vectors</p>
               </div>
-            </div>{" "}
+            </div>
             <div className={styles.toolkit__item}>
-              <img src={gpt} alt="Chat GPT icon" />
+              <img src={gpt} alt="Chat GPT" />
               <div className={styles.toolkit__copy}>
                 <p className={styles.path__year}>Chat GPT</p>
                 <p className={styles.about__text}>General</p>
               </div>
-            </div>{" "}
+            </div>
             <div className={styles.toolkit__item}>
-              <img src={gem} alt="Gemini icon" />
+              <img src={claude} alt="Claude" />
               <div className={styles.toolkit__copy}>
-                <p className={styles.path__year}>Gemini</p>
+                <p className={styles.path__year}>Claude</p>
                 <p className={styles.about__text}>General</p>
               </div>
             </div>
             <div className={styles.toolkit__item}>
-              <img src={ill} alt="Illustrator icon" />
+              <img src={ill} alt="Illustrator" />
               <div className={styles.toolkit__copy}>
                 <p className={styles.path__year}>Illustrator</p>
                 <p className={styles.about__text}>Vectors</p>
               </div>
             </div>
             <div className={styles.toolkit__item}>
-              <img src={pho} alt="Photoshop icon" />
+              <img src={pho} alt="Photoshop" />
               <div className={styles.toolkit__copy}>
                 <p className={styles.path__year}>Photoshop</p>
                 <p className={styles.about__text}>Photo editing</p>
               </div>
             </div>
             <div className={styles.toolkit__item}>
-              <img src={lot} alt="Lottie Files icon" />
+              <img src={lot} alt="Lottie Files" />
               <div className={styles.toolkit__copy}>
                 <p className={styles.path__year}>Lottie Files</p>
                 <p className={styles.about__text}>Animations</p>
               </div>
             </div>
             <div className={styles.toolkit__item}>
-              <img src={vs} alt="Figma icon" />
+              <img src={vs} alt="VS Code" />
               <div className={styles.toolkit__copy}>
                 <p className={styles.path__year}>VS Code</p>
                 <p className={styles.about__text}>Coding</p>

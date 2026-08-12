@@ -32,8 +32,8 @@
 
   &__title {
     text-align: center;
-    font-family: Inter;
-    font-size: 80px;
+    font-family: $inter;
+    font-size: $fs-6xl;
     font-style: normal;
     font-weight: 300;
     line-height: 88px; /* 110% */
@@ -63,11 +63,11 @@
     max-width: 805px;
     color: rgba(255, 255, 255, 0.6);
     text-align: center;
-    font-family: "Inter";
-    font-size: 22px;
+    font-family: $inter;
+    font-size: $fs-lg;
     font-style: normal;
     font-weight: 300;
-    line-height: normal;
+    line-height: 32px;
     padding-bottom: 32px;
   }
 }
@@ -88,7 +88,7 @@
   &__text {
     color: rgba(255, 255, 255, 0.8);
     text-align: center;
-    font-family: "Inter";
+    font-family: $inter;
     font-size: 38px;
     font-style: normal;
     font-weight: 300;
@@ -111,7 +111,7 @@
 
   &__purple {
     color: #929cfd;
-    font-family: "Inter";
+    font-family: $inter;
     font-size: 38px;
     font-style: italic;
     @include max-width(1024px) {
@@ -143,7 +143,7 @@
   h2 {
     color: #fff;
     text-align: center;
-    font-family: "Inter";
+    font-family: $inter;
     font-size: 28px;
     font-style: normal;
     font-weight: 400;
